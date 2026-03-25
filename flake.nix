@@ -25,6 +25,7 @@
             pkgs.clippy
             pkgs.rust-analyzer
           ];
+          RUST_SRC_PATH = pkgs.rustPlatform.rustLibSrc;
           shellHook = ''
             echo "Entering Rust development environment..."
             echo "Available tools: cargo, rustc, rustfmt, clippy, rust-analyzer"
