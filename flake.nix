@@ -11,7 +11,13 @@
       nixpkgs,
       flake-utils,
     }:
-    flake-utils.lib.eachDefaultSystem (
+    {
+      templates.default = {
+        path = ./.;
+        description = "A reproducible Rust development environment with modern tooling";
+      };
+    }
+    // flake-utils.lib.eachDefaultSystem (
       system:
       let
         pkgs = nixpkgs.legacyPackages.${system};
